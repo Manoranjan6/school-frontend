@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const username = document.getElementById("username");
   const password = document.getElementById("password");
   const eye = document.getElementById("eye");
-  const msg = document.getElementById("msg");
 
   // 👁 Toggle password
   eye.addEventListener("click", () => {
@@ -18,13 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// 🔥 LOGIN FUNCTION (GLOBAL)
+// 🔥 LOGIN FUNCTION
 async function login() {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
   const msg = document.getElementById("msg");
-
-  console.log("Login clicked"); // DEBUG
 
   if (!username || !password) {
     msg.innerText = "⚠️ Please fill all fields";
@@ -42,15 +38,23 @@ async function login() {
 
     const data = await res.json();
 
+    console.log("Status:", res.status);
+    console.log("Response:", data);
+
     if (res.ok) {
       localStorage.setItem("token", data.token);
-      window.location.href = "admin.html";
+      msg.innerText = "✅ Login successful";
+
+      setTimeout(() => {
+        window.location.href = "admin.html";
+      }, 1000);
+
     } else {
-      msg.innerText = "❌ Invalid username or password";
+      msg.innerText = "❌ " + data.message;
     }
 
   } catch (err) {
-    console.error(err);
+    console.error("Fetch Error:", err);
     msg.innerText = "⚠️ Server error";
   }
 }
