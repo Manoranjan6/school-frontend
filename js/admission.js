@@ -13,7 +13,7 @@ document.getElementById("admissionForm").addEventListener("submit", async (e) =>
 };
 
   try {
-    const res = await fetch("http://localhost:5000/api/admissions", {
+    const res = await fetch("https://school-backend-yk3x.onrender.com/api/admission", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
