@@ -20,7 +20,7 @@ function scrollToSection() {
 
 // 🔥 FETCH NOTICES FROM BACKEND
 async function loadNotices() {
-  const res = await fetch("http://localhost:5000/api/notices");
+  const res = await fetch("https://school-backend-yk3x.onrender.com/api/notices");
   const data = await res.json();
 
   const box = document.getElementById("notice-box");
