@@ -35,7 +35,7 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 00px;
 
   /* responsive width */
   max-width: 75%;
@@ -43,8 +43,8 @@ body {
 
 /* Logo image */
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
 
