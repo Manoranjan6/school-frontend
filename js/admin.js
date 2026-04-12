@@ -23,17 +23,17 @@ function logout() {
 // =======================
 async function loadDashboard() {
   try {
-    const a = await fetch("http://localhost:5000/api/admissions", {
+    const a = await fetch("https://school-backend-yk3x.onrender.com/api/admission", {
       headers: { Authorization: token }
     });
     const admissions = await a.json();
 
-    const n = await fetch("http://localhost:5000/api/notices/all", {
+    const n = await fetch("https://school-backend-yk3x.onrender.com/api/notices/all", {
       headers: { Authorization: token }
     });
     const notices = await n.json();
 
-    const g = await fetch("http://localhost:5000/api/gallery");
+    const g = await fetch("https://school-backend-yk3x.onrender.com/api/gallery");
     const gallery = await g.json();
 
     document.getElementById("totalAdmissions").innerText = admissions.length;
@@ -52,7 +52,7 @@ let allAdmissions = [];
 
 async function loadAdmissions() {
   try {
-    const res = await fetch("http://localhost:5000/api/admissions", {
+    const res = await fetch("https://school-backend-yk3x.onrender.com/api/admissions", {
       headers: { Authorization: token }
     });
 
@@ -108,7 +108,7 @@ if (searchInput) {
 // =======================
 async function exportExcel() {
   try {
-    const res = await fetch("http://localhost:5000/api/admissions/export", {
+    const res = await fetch("https://school-backend-yk3x.onrender.com/api/admission/export", {
       headers: { Authorization: token }
     });
 
@@ -131,7 +131,7 @@ async function exportExcel() {
 
 // Load years
 async function loadYears() {
-  const res = await fetch("http://localhost:5000/api/gallery/years");
+  const res = await fetch("https://school-backend-yk3x.onrender.com/api/gallery/years");
   const years = await res.json();
 
   const select = document.getElementById("yearSelect");
@@ -148,7 +148,7 @@ async function loadYears() {
 
 // Load categories
 async function loadCategories(year) {
-  const res = await fetch(`http://localhost:5000/api/gallery/categories/${year}`);
+  const res = await fetch(`https://school-backend-yk3x.onrender.com/api/gallery/categories/${year}`);
   const cats = await res.json();
 
   const select = document.getElementById("categorySelect");
@@ -183,7 +183,7 @@ if (uploadForm) {
     formData.append("year", year);
     formData.append("category", category);
 
-    await fetch("http://localhost:5000/api/gallery", {
+    await fetch("https://school-backend-yk3x.onrender.com/api/gallery", {
       method: "POST",
       headers: { Authorization: token },
       body: formData
@@ -198,7 +198,7 @@ if (uploadForm) {
 
 // Load gallery
 async function loadGalleryAdmin() {
-  const res = await fetch("http://localhost:5000/api/gallery");
+  const res = await fetch("https://school-backend-yk3x.onrender.com/api/gallery");
   const data = await res.json();
 
   const div = document.getElementById("galleryPreview");
@@ -218,7 +218,7 @@ async function loadGalleryAdmin() {
 
 // Delete image
 async function deleteImage(id) {
-  await fetch(`http://localhost:5000/api/gallery/${id}`, {
+  await fetch(`https://school-backend-yk3x.onrender.com/api/gallery/${id}`, {
     method: "DELETE",
     headers: { Authorization: token }
   });
