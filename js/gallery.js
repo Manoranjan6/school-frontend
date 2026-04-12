@@ -1,5 +1,5 @@
 async function loadGallery() {
-  const res = await fetch("http://localhost:5000/api/gallery");
+  const res = await fetch("https://school-backend-yk3x.onrender.com/api/gallery");
   const data = await res.json();
 
   const container = document.getElementById("gallery");
