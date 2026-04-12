@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to right, #eef5ff, #d9e8ff);
+  color: #333;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  z-index: 1000;
+}
+
+/* Logo + Name */
+/* Logo + Name container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  /* responsive width */
+  max-width: 75%;
+}
+
+/* Logo image */
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* School name */
+.school-name {
+  font-size:16px !important;
+  font-weight: 600;
+  color: #007BFF;
+  line-height: 1.2;
+
+  /* 🔥 Auto scaling text */
+  font-size: clamp(14px, 2.5vw, 22px);
+
+  /* allow wrapping */
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .logo-container {
+    max-width: 70%;
+  }
+
+  .school-name {
+    max-width: 250px !important;
+  }
+}
+
+
+  
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #007BFF;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.hero-content {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.hero h1 {
+  font-size: 45px;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background: white;
+  color: #007BFF;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about, .notices, .gallery {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Notice Box */
+.notice-box {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Gallery */
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.images img {
+  width: 200px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.images img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: #007BFF;
+  color: white;
+  padding: 20px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .images img {
+    width: 100%;
+  }
+
+  .school-name {
+    font-size: 14px;
+    max-width: 150px;
+  }
+}
+.school-name {
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .school-name {
+    font-size: 16px;
+  }
+}

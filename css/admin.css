@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  flex-wrap: wrap;
+}
+
+.nav-left h2 {
+  font-size: 20px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.nav-right button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  color: #007BFF;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.logout {
+  background: #ff4d4d !important;
+  color: white !important;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+}
+
+/* Sections */
+.section {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+}
+
+/* Table */
+.controls {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controls input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Scroll for large table */
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #007BFF;
+  color: white;
+}
+
+/* Inputs */
+input {
+  margin: 10px 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  color: #007BFF;
+  cursor: pointer;
+}
+
+/* Gallery */
+#galleryPreview img {
+  width: 100px;
+  margin: 10px;
+  border-radius: 10px;
+}

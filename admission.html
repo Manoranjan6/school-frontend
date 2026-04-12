@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Form</title>
+  <link rel="stylesheet" href="css/admission.css">
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Admission Enquiry</h2>
+
+  <form id="admissionForm">
+
+    <div class="input-group">
+      <label>Student Name*</label>
+      <input type="text" id="name" placeholder="Enter full name" required>
+    </div>
+
+    <div class="input-group">
+      <label>Class Seeking Admission*</label>
+      <select id="class" required>
+        <option value="">Select Class</option>
+        <option>Nursery</option>
+        <option>LKG</option>
+        <option>UKG</option>
+        <option>1</option>
+        <option>2</option>
+         <option>3</option>
+          <option>4</option>         <option>5</option> 
+          <option>6</option> 
+          <option>7</option> 
+          <option>8</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Date of Birth*</label>
+      <input type="date" id="dob" required>
+    </div>
+
+    <div class="input-group">
+      <label>Parent / Guardian Name*</label>
+      <input type="text" id="parent" required>
+    </div>
+
+    <div class="input-group">
+      <label>Mobile Number*</label>
+      <input type="tel" id="phone" placeholder="10-digit number" required>
+    </div>
+
+    <div class="input-group">
+      <label>Email (Optional)</label>
+      <input type="email" id="email">
+    </div>
+
+    <div class="input-group">
+      <label>Present School</label>
+      <input type="text" id="school">
+    </div>
+
+    <div class="input-group">
+      <label>Message / Query</label>
+      <textarea id="message" rows="4"></textarea>
+    </div>
+
+    <button type="submit">Submit Application</button>
+
+    <p id="responseMsg"></p>
+
+  </form>
+</div>
+
+<script src="js/admission.js"></script>
+</body>
+</html>
