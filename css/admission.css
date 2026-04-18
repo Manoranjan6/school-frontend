@@ -1,67 +1,141 @@
-body {
+/* RESET */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  min-height: 100vh;
   background: linear-gradient(135deg, #4facfe, #00f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* CONTAINER */
 .form-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* GLASS CARD */
+.form-card {
+  width: 100%;
   max-width: 450px;
-  margin: 40px auto;
-  background: rgba(255,255,255,0.15);
+  padding: 30px;
+  border-radius: 20px;
   backdrop-filter: blur(15px);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  color: white;
+  animation: fadeIn 0.6s ease;
 }
 
-h2 {
+/* TITLE */
+.form-card h2 {
   text-align: center;
-  color: white;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
 
-label {
-  color: white;
-  font-size: 14px;
-  margin-top: 10px;
-  display: block;
+/* INPUT GROUP */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
 }
 
-input, select, textarea {
+/* INPUTS */
+.input-group input,
+.input-group select,
+.input-group textarea {
   width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: none;
-  margin-top: 5px;
-  margin-bottom: 12px;
+  outline: none;
+  background: rgba(255,255,255,0.9);
   font-size: 14px;
+  transition: 0.3s;
 }
 
+/* TEXTAREA HEIGHT */
 textarea {
-  height: 100px;
+  min-height: 80px;
+  resize: none;
 }
 
-button {
+/* LABEL */
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: #555;
+  font-size: 14px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+/* FLOAT EFFECT */
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group select:focus + label,
+.input-group select:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  top: -8px;
+  left: 10px;
+  background: white;
+  padding: 0 5px;
+  font-size: 11px;
+  color: #0077ff;
+}
+
+/* FOCUS EFFECT */
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  box-shadow: 0 0 10px rgba(0,119,255,0.6);
+}
+
+/* BUTTON */
+.submit-btn {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   border-radius: 30px;
   border: none;
-  background: white;
-  color: #0077ff;
-  font-weight: bold;
+  background: linear-gradient(45deg, #0077ff, #00c6ff);
+  color: white;
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-button:hover {
-  background: #0077ff;
-  color: white;
+/* BUTTON HOVER */
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
-.success {
-  display: none;
+/* STATUS MESSAGE */
+#statusMsg {
   text-align: center;
-  color: #00ffcc;
-  margin-top: 10px;
-  font-weight: bold;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
