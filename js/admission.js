@@ -1,24 +1,36 @@
 const form = document.getElementById("admissionForm");
-const successMsg = document.getElementById("successMsg");
+const statusMsg = document.getElementById("statusMsg");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const phone = document.getElementById("phone").value;
+  const studentName = document.getElementById("studentName").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
 
-  // 🔴 VALIDATION (YOU DIDN’T DO THIS BEFORE)
-  if (phone.length !== 10) {
-    alert("Enter valid 10-digit mobile number");
+  // 🔴 STRONG VALIDATION
+  if (studentName.length < 3) {
+    showError("Name must be at least 3 characters");
+    return;
+  }
+
+  if (!/^[0-9]{10}$/.test(phone)) {
+    showError("Enter valid 10-digit mobile number");
+    return;
+  }
+
+  if (email && !/^\S+@\S+\.\S+$/.test(email)) {
+    showError("Invalid email format");
     return;
   }
 
   const data = {
-    studentName: document.getElementById("studentName").value,
+    studentName,
     classSeeking: document.getElementById("classSeeking").value,
     dob: document.getElementById("dob").value,
     parentName: document.getElementById("parentName").value,
     phone,
-    email: document.getElementById("email").value,
+    email,
     presentSchool: document.getElementById("presentSchool").value,
     message: document.getElementById("message").value
   };
@@ -34,10 +46,25 @@ form.addEventListener("submit", async (e) => {
 
     const result = await res.json();
 
-    successMsg.style.display = "block";
+    if (!res.ok) {
+      showError(result.message || "Submission failed");
+      return;
+    }
+
+    showSuccess("✅ Submitted Successfully");
     form.reset();
 
   } catch (err) {
-    alert("Error submitting form");
+    showError("Server error. Try again later.");
   }
 });
+
+function showError(msg) {
+  statusMsg.style.color = "red";
+  statusMsg.innerText = msg;
+}
+
+function showSuccess(msg) {
+  statusMsg.style.color = "lightgreen";
+  statusMsg.innerText = msg;
+}
