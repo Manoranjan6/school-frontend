@@ -13,51 +13,78 @@
 
 <div class="form-container">
 
-  <h2>Admission Form</h2>
+  <form id="admissionForm" class="form-card">
 
-  <form id="admissionForm">
+    <h2>🎓 Admission Form</h2>
 
-    <label>Student Name*</label>
-    <input type="text" id="studentName" placeholder="Enter full name" required>
+    <!-- Student Name -->
+    <div class="input-group">
+      <input type="text" id="studentName" required minlength="3">
+      <label>Student Name*</label>
+    </div>
 
-    <label>Class Seeking Admission*</label>
-    <select id="classSeeking" required>
-      <option value="">Select Class</option>
-      <option>Nursery</option>
-      <option>LKG</option>
-      <option>UKG</option>
-      <option>Class 1</option>
-      <option>Class 2</option>
-      <option>Class 3</option>
-      <option>Class 4</option>
-<option>Class 5</option>
-<option>Class 6</option>
-<option>Class 7</option>
-<option>Class 8</option>
+    <!-- Class -->
+    <div class="input-group">
+      <select id="classSeeking" required>
+        <option value="" disabled selected></option>
+        <option>Nursery</option>
+        <option>LKG</option>
+        <option>UKG</option>
+        <option>Class 1</option>
+        <option>Class 2</option>
+        <option>Class 3</option>
+        <option>Class 4</option>
+        <option>Class 5</option>
+        <option>Class 6</option>
+        <option>Class 7</option>
+        <option>Class 8</option>
+      </select>
+      <label>Class Seeking Admission*</label>
+    </div>
 
-    </select>
+    <!-- DOB -->
+    <div class="input-group">
+      <input type="date" id="dob" required>
+      <label>Date of Birth*</label>
+    </div>
 
-    <label>Date of Birth*</label>
-    <input type="date" id="dob" required>
+    <!-- Parent -->
+    <div class="input-group">
+      <input type="text" id="parentName" required minlength="3">
+      <label>Parent / Guardian Name*</label>
+    </div>
 
-    <label>Parent / Guardian Name*</label>
-    <input type="text" id="parentName" required>
+    <!-- Phone -->
+    <div class="input-group">
+      <input type="tel" id="phone" required pattern="[0-9]{10}">
+      <label>Mobile Number*</label>
+    </div>
 
-    <label>Mobile Number*</label>
-    <input type="tel" id="phone" placeholder="10-digit number" required>
+    <!-- Email -->
+    <div class="input-group">
+      <input type="email" id="email">
+      <label>Email (Optional)</label>
+    </div>
 
-    <label>Email (Optional)</label>
-    <input type="email" id="email">
+    <!-- School -->
+    <div class="input-group">
+      <input type="text" id="presentSchool">
+      <label>Present School</label>
+    </div>
 
-    <label>Present School</label>
-    <input type="text" id="presentSchool">
+    <!-- Message -->
+    <div class="input-group">
+      <textarea id="message"></textarea>
+      <label>Message / Query</label>
+    </div>
 
-    <label>Message / Query</label>
-    <textarea id="message"></textarea>
+    <!-- Button -->
+    <button type="submit" class="submit-btn">
+      Submit Application 🚀
+    </button>
 
-    <button type="submit">Submit Application</button>
-
-    <p id="successMsg" class="success">✅ Submitted Successfully</p>
+    <!-- Status -->
+    <p id="statusMsg"></p>
 
   </form>
 
