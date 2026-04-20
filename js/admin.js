@@ -225,7 +225,20 @@ async function deleteImage(id) {
 
   loadGalleryAdmin();
 }
+function showSection(sectionId) {
+  document.querySelectorAll(".section").forEach(sec => {
+    sec.classList.add("hidden");
+  });
 
+  document.getElementById(sectionId).classList.remove("hidden");
+
+  // ACTIVE BUTTON FIX
+  document.querySelectorAll(".sidebar button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  event.target.closest("button").classList.add("active");
+}
 // =======================
 // 🚀 INIT
 // =======================
