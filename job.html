@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="css/job.css">
+
+<div class="header">
+  <h1>Careers</h1>
+  <p>Join our school and build the future</p>
+</div>
+
+<div class="form-container">
+
+<form id="jobForm" enctype="multipart/form-data">
+
+<div class="form-grid">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="number" name="age" placeholder="Age">
+
+<select name="gender">
+<option>Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<input type="text" name="qualification" placeholder="Qualification">
+
+<select name="bedStatus">
+<option>B.Ed Status</option>
+<option>Completed</option>
+<option>Pursuing</option>
+</select>
+
+<input type="number" name="experience" placeholder="Experience">
+
+<select name="currentlyWorking">
+<option>Currently Working?</option>
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<textarea class="full" name="experienceDetails" placeholder="Experience Details"></textarea>
+
+<input class="full" type="file" name="resume">
+
+<textarea class="full" name="message" placeholder="Message"></textarea>
+
+<button class="full">Submit Application</button>
+
+</div>
+
+<p id="successMsg" class="success">✅ Submitted Successfully</p>
+
+</form>
+
+</div>
+
+<script src="js/job.js"></script>
